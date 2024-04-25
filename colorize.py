@@ -47,6 +47,26 @@ def data_rgb_to_hex(dictio, key, value):
                 k=key, v=dictio[key]))
 
 
+def colorize_gtk2(gtkrc_file, target_rc, search_dict):
+    """
+    return type: void
+    Description:
+      replace the colors on the gtk rc file specified
+      in "gtkrc_file" using the provided "search_dict"
+      with the colors from the global "replace" dict,
+      write the file to the "target_rc" gtkrc file
+    """
+    with open(gtkrc_file, 'r') as file:
+        data = file.read()
+        for keys, values in search_dict.items():
+            # print("{}: {}".format(keys, values))
+            data = data.replace(search_dict[keys], replace[keys])
+        if args.debug:
+            print(data)
+    with open(target_rc, 'w') as file:
+        file.write(data)
+
+
 ########
 # Main #
 ########
@@ -110,7 +130,7 @@ search_dark = {
     "tooltip_bg": "#343434",
 }
 
-replace_dark = {
+replace = {
     "text": data["variables"]["window_fg_color"],
     "base": data["variables"]["window_bg_color"],
     "fg": data["variables"]["view_fg_color"],
@@ -148,15 +168,7 @@ if os.path.exists(args.res):
     if os.path.isfile(gtk_rc) and os.path.isfile(gtk_dark_rc):
         if args.debug:
             print("rc files exist")
-        with open(gtk_dark_rc, 'r') as file:
-            data = file.read()
-            for keys, values in search_dark.items():
-                # print("{}: {}".format(keys, values))
-                data = data.replace(search_dark[keys], replace_dark[keys])
-            if args.debug:
-                print(data)
-        with open(target_dark, 'w') as file:
-            file.write(data)
+        colorize_gtk2(gtk_dark_rc, target_dark, search_dark)
     else:
         print("rc files don't exist")
         sys.exit()
