@@ -130,6 +130,25 @@ search_dark = {
     "tooltip_bg": "#343434",
 }
 
+search_light = {
+    "text": "black",
+    "base": "white",
+    "fg": "#2e3436",
+    "bg": "#fafafa",
+    "selection_fg": "#ffffff",
+    "selection_bg": "#3584e4",
+    "insensitive_fg": "#8b8e8f",
+    "insensitive_bg": "#f0f0f0",
+    "menu": "white",
+    "link": "#2a76c6",
+    "link_visited": "#215d9c",
+    "column_header": "#979a9b",
+    "column_header_hover": "#636769",
+    "window_color": "#f4f4f4",
+    "tooltip_fg": "#ffffff",
+    "tooltip_bg": "#343434",
+}
+
 replace = {
     "text": data["variables"]["window_fg_color"],
     "base": data["variables"]["window_bg_color"],
@@ -160,7 +179,7 @@ i will assume that the command to install adw-gtk2 was:
 make install INSTALL_DIR=~/.local/share/themes
 """
 target_dir = "{}/.local/share/themes".format(home_dir)
-target = "{}/adw-gtk3/gtk-2.0/gtkrc".format(target_dir)
+target_light = "{}/adw-gtk3/gtk-2.0/gtkrc".format(target_dir)
 target_dark = "{}/adw-gtk3-dark/gtk-2.0/gtkrc".format(target_dir)
 
 if os.path.exists(args.res):
@@ -168,6 +187,9 @@ if os.path.exists(args.res):
     if os.path.isfile(gtk_rc) and os.path.isfile(gtk_dark_rc):
         if args.debug:
             print("rc files exist")
+        # colorize light
+        colorize_gtk2(gtk_rc, target_light, search_light)
+        # colorize dark
         colorize_gtk2(gtk_dark_rc, target_dark, search_dark)
     else:
         print("rc files don't exist")
