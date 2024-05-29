@@ -1,54 +1,66 @@
 
-gtk-color-scheme ="base_color:#2A2A37"
-gtk-color-scheme ="bg_color:#1f1f28"
-gtk-color-scheme ="tooltip_bg_color:#1f1f28"
-gtk-color-scheme ="selected_bg_color:#338DD6"
-gtk-color-scheme ="text_color:#DCD7BA"
-gtk-color-scheme ="fg_color:#DCD7BA"
-gtk-color-scheme ="tooltip_fg_color:#DCD7BA"
-gtk-color-scheme ="selected_fg_color:#fefefe"
-gtk-color-scheme ="menubar_bg_color:#1f1f28"
-gtk-color-scheme ="menubar_fg_color:#DCD7BA"
-gtk-color-scheme ="toolbar_bg_color:#1f1f28"
-gtk-color-scheme ="toolbar_fg_color:#DCD7BA"
-gtk-color-scheme ="menu_bg_color:#1f1f28"
-gtk-color-scheme ="menu_fg_color:#DCD7BA"
-gtk-color-scheme ="panel_bg_color:#1f1f28"
-gtk-color-scheme ="panel_fg_color:#DCD7BA"
-gtk-color-scheme ="link_color:#5181f3"
-gtk-color-scheme ="btn_bg_color:#2A2A37"
-gtk-color-scheme ="btn_fg_color:#fafafa"
-gtk-color-scheme ="titlebar_bg_color:#1f1f28"
-gtk-color-scheme ="titlebar_fg_color:#DCD7BA"
-gtk-color-scheme ="primary_caret_color:#DCD7BA"
-gtk-color-scheme ="secondary_caret_color:#DCD7BA"
-gtk-color-scheme ="accent_bg_color:#C8C093"
-
 # Text/base
 gtk-color-scheme = "text_color:white"
 gtk-color-scheme = "base_color:#232729"
+
 # Foreground/background
 gtk-color-scheme = "fg_color:#eeeeec"
 gtk-color-scheme = "bg_color:#33393b"
-# Selected foreground/background
-gtk-color-scheme = "selected_fg_color:#ffffff"
-gtk-color-scheme = "selected_bg_color:#215d9c"
-# Insensitive foreground/background
-gtk-color-scheme = "insensitive_fg_color:#919494"
-gtk-color-scheme = "insensitive_bg_color:#2d3234"
-# Menus
-gtk-color-scheme = "menu_color:#262b2d"
-# Links
-gtk-color-scheme = "link_color:#4a90d9"
-gtk-color-scheme = "visited_link_color:#2a76c6"
-# Treeview headers
-gtk-color-scheme = "column_header_color:#898b8b"
-gtk-color-scheme = "hover_column_header_color:#bcbdbc"
-# Window decoration
-gtk-color-scheme = "window_color:#2c3133"
+
 # Tooltips
 gtk-color-scheme = "tooltip_fg_color:#ffffff"
 gtk-color-scheme = "tooltip_bg_color:#343434"
+
+# Selected foreground/background
+gtk-color-scheme = "selected_fg_color:#ffffff"
+gtk-color-scheme = "selected_bg_color:#215d9c"
+
+# Insensitive foreground/background
+gtk-color-scheme = "insensitive_fg_color:#919494"
+gtk-color-scheme = "insensitive_bg_color:#2d3234"
+
+# Menubar
+gtk-color-scheme = "menubar_bg_color:#262b2d"
+gtk-color-scheme = "menubar_fg_color:#ffffff"
+
+# Toolbar
+gtk-color-scheme = "toolbar_bg_color:#262b2d"
+gtk-color-scheme = "toolbar_fg_color:#ffffff"
+
+# Menus
+gtk-color-scheme = "menu_color:#262b2d"
+gtk-color-scheme = "menu_bg_color:#262b2d"
+gtk-color-scheme = "menu_fg_color:#ffffff"
+
+# Panel
+gtk-color-scheme = "panel_bg_color:#262b2d"
+gtk-color-scheme = "panel_fg_color:#ffffff"
+
+# Links
+gtk-color-scheme = "link_color:#4a90d9"
+gtk-color-scheme = "visited_link_color:#2a76c6"
+
+# button
+gtk-color-scheme = "btn_bg_color:#343434"
+gtk-color-scheme = "btn_fg_color:#eeeeec"
+
+# titlebar
+gtk-color-scheme = "titlebar_bg_color:#262b2d"
+gtk-color-scheme = "titlebar_fg_color:#ffffff"
+
+# caret
+gtk-color-scheme = "primary_caret_color:#eeeeec"
+gtk-color-scheme = "secondary_caret_color:#ffffff"
+
+# accent
+gtk-color-scheme = "accent_bg_color:#4a90d9"
+
+# Treeview headers
+gtk-color-scheme = "column_header_color:#898b8b"
+gtk-color-scheme = "hover_column_header_color:#bcbdbc"
+
+# Window decoration
+gtk-color-scheme = "window_color:#2c3133"
 
 # Default Style
 
