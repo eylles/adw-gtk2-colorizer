@@ -1,3 +1,7 @@
-colorize [adw-gtk2](https://github.com/molotov-dmitry/adw-gtk2)
+# colorize adw-gtk2
 
-note, the png assets aren't colorized yet!
+![screenshot 1](screenshot-col1.png)
+![screenshot 2](screenshot-col2.png)
+
+
+a gradience preset is used to colorize the gtk2 theme!
