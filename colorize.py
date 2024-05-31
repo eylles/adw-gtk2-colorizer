@@ -112,60 +112,199 @@ if args.debug:
         print("{key: >24}: {value}".format(key=keys, value=values))
 
 search_dark = {
-    "text": "white",
-    "base": "#232729",
-    "fg": "#eeeeec",
-    "bg": "#33393b",
-    "selection_fg": "#ffffff",
-    "selection_bg": "#215d9c",
-    "insensitive_fg": "#919494",
-    "insensitive_bg": "#2d3234",
-    "menu": "#262b2d",
-    "link": "#4a90d9",
-    "link_visited": "#2a76c6",
-    "column_header": "#898b8b",
-    "column_header_hover": "#bcbdbc",
+    # Text/base
+    "text_color": "white",
+    "base_color": "#232729",
+
+    # Foreground/background
+    "fg_color": "#eeeeec",
+    "bg_color": "#33393b",
+
+    # Tooltips
+    "tooltip_fg_color": "#ffffff",
+    "tooltip_bg_color": "#343434",
+
+    # Selected foreground/background
+    "selected_fg_color": "#ffffff",
+    "selected_bg_color": "#215d9c",
+
+    # Insensitive foreground/background
+    "insensitive_fg_color": "#919494",
+    "insensitive_bg_color": "#2d3234",
+
+    # Menubar
+    "menubar_bg_color": "#262b2d",
+    "menubar_fg_color": "#ffffff",
+
+    # Toolbar
+    "toolbar_bg_color": "#262b2d",
+    "toolbar_fg_color": "#ffffff",
+
+    # Menus
+    "menu_color": "#262b2d",
+    "menu_bg_color": "#262b2d",
+    "menu_fg_color": "#ffffff",
+
+    # Panel
+    "panel_bg_color": "#262b2d",
+    "panel_fg_color": "#ffffff",
+
+    # Links
+    "link_color": "#4a90d9",
+    "visited_link_color": "#2a76c6",
+
+    # button
+    "btn_bg_color": "#343434",
+    "btn_fg_color": "#eeeeec",
+
+    # titlebar
+    "titlebar_bg_color": "#262b2d",
+    "titlebar_fg_color": "#ffffff",
+
+    # caret
+    "primary_caret_color": "#eeeeec",
+    "secondary_caret_color": "#ffffff",
+
+    # accent
+    "accent_bg_color": "#4a90d9",
+
+    # Treeview headers
+    "column_header_color": "#898b8b",
+    "hover_column_header_color": "#bcbdbc",
+
+    # Window decoration
     "window_color": "#2c3133",
-    "tooltip_fg": "#ffffff",
-    "tooltip_bg": "#343434",
 }
 
 search_light = {
-    "text": "black",
-    "base": "white",
-    "fg": "#2e3436",
-    "bg": "#fafafa",
-    "selection_fg": "#ffffff",
-    "selection_bg": "#3584e4",
-    "insensitive_fg": "#8b8e8f",
-    "insensitive_bg": "#f0f0f0",
-    "menu": "white",
-    "link": "#2a76c6",
-    "link_visited": "#215d9c",
-    "column_header": "#979a9b",
-    "column_header_hover": "#636769",
+    # Text/base
+    "text_color": "black",
+    "base_color": "white",
+
+    # Foreground/background
+    "fg_color": "#2e3436",
+    "bg_color": "#fafafa",
+
+    # Tooltips
+    "tooltip_fg_color": "#ffffff",
+    "tooltip_bg_color": "#343434",
+
+    # Selected foreground/background
+    "selected_fg_color": "#ffffff",
+    "selected_bg_color": "#3584e4",
+
+    # Insensitive foreground/background
+    "insensitive_fg_color": "#8b8e8f",
+    "insensitive_bg_color": "#f0f0f0",
+
+    # Menubar
+    "menubar_bg_color": "#eeeeee",
+    "menubar_fg_color": "black",
+
+    # Toolbar
+    "toolbar_bg_color": "#eeeeee",
+    "toolbar_fg_color": "black",
+
+    # Menus
+    "menu_color": "white",
+    "menu_bg_color": "#eeeeee",
+    "menu_fg_color": "black",
+
+    # Panel
+    "panel_bg_color": "#fafafa",
+    "panel_fg_color": "black",
+
+    # Links
+    "link_color": "#2a76c6",
+    "visited_link_color": "#215d9c",
+
+    # button
+    "btn_bg_color": "#eeeeee",
+    "btn_fg_color": "black",
+
+    # titlebar
+    "titlebar_bg_color": "#fafafa",
+    "titlebar_fg_color": "black",
+
+    # caret
+    "primary_caret_color": "#2e3436",
+    "secondary_caret_color": "#000000",
+
+    # accent
+    "accent_bg_color": "#2a76c6",
+
+    # Treeview headers
+    "column_header_color": "#979a9b",
+    "hover_column_header_color": "#636769",
+
+    # Window decoration
     "window_color": "#f4f4f4",
-    "tooltip_fg": "#ffffff",
-    "tooltip_bg": "#343434",
 }
 
 replace = {
-    "text": data["variables"]["window_fg_color"],
-    "base": data["variables"]["window_bg_color"],
-    "fg": data["variables"]["view_fg_color"],
-    "bg": data["variables"]["view_bg_color"],
-    "selection_fg": data["variables"]["card_bg_color"],
-    "selection_bg": data["variables"]["accent_color"],
-    "insensitive_fg": data["variables"]["accent_fg_color"],
-    "insensitive_bg": data["variables"]["shade_color"],
-    "menu": data["variables"]["view_bg_color"],
-    "link": data["variables"]["accent_color"],
-    "link_visited": data["variables"]["accent_fg_color"],
-    "column_header": data["variables"]["headerbar_shade_color"],
-    "column_header_hover": data["variables"]["shade_color"],
+    # Text/base
+    "text_color": data["variables"]["window_fg_color"],
+    "base_color": data["variables"]["view_bg_color"],
+
+    # Foreground/background
+    "fg_color": data["variables"]["view_fg_color"],
+    "bg_color": data["variables"]["window_bg_color"],
+
+    # Selected foreground/background
+    "selected_fg_color": data["variables"]["card_bg_color"],
+    "selected_bg_color": data["variables"]["accent_color"],
+
+    # Insensitive foreground/background
+    "insensitive_fg_color": data["variables"]["accent_fg_color"],
+    "insensitive_bg_color": data["variables"]["shade_color"],
+
+    # Menus
+    "menu_color": data["variables"]["window_bg_color"],
+    "menu_bg_color": data["variables"]["window_bg_color"],
+    "menu_fg_color": data["variables"]["view_fg_color"],
+
+    # Menubar
+    "menubar_bg_color": data["variables"]["view_bg_color"],
+    "menubar_fg_color": data["variables"]["view_fg_color"],
+
+    # Panel
+    "panel_bg_color": data["variables"]["window_bg_color"],
+    "panel_fg_color": data["variables"]["view_fg_color"],
+
+    # Toolbar
+    "toolbar_bg_color": data["variables"]["card_bg_color"],
+    "toolbar_fg_color": data["variables"]["view_fg_color"],
+
+    # Links
+    "link_color": data["variables"]["accent_color"],
+    "visited_link_color": data["variables"]["accent_fg_color"],
+
+    # accent
+    "accent_bg_color": data["variables"]["accent_color"],
+
+    # Treeview headers
+    "column_header_color": data["variables"]["headerbar_shade_color"],
+    "hover_column_header_color": data["variables"]["shade_color"],
+
+    # Window decoration
     "window_color": data["variables"]["card_bg_color"],
-    "tooltip_fg": data["variables"]["window_fg_color"],
-    "tooltip_bg": data["variables"]["window_bg_color"],
+
+    # Tooltips
+    "tooltip_bg_color": data["variables"]["window_bg_color"],
+    "tooltip_fg_color": data["variables"]["window_fg_color"],
+
+    # button
+    "btn_bg_color": data["variables"]["shade_color"],
+    "btn_fg_color": data["variables"]["view_fg_color"],
+
+    # titlebar
+    "titlebar_bg_color": data["variables"]["window_bg_color"],
+    "titlebar_fg_color": data["variables"]["view_fg_color"],
+
+    # caret
+    "primary_caret_color": data["variables"]["view_fg_color"],
+    "secondary_caret_color": data["variables"]["window_fg_color"],
+
 }
 
 gtk_rc = "{}/adw-gtk3/gtk-2.0/gtkrc".format(args.res)
