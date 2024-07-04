@@ -78,6 +78,9 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-f", "--file", required="true", help="JSON file to use")
 parser.add_argument("-r", "--resources", dest="res", required="true",
                     help="adw-gtk2 dir")
+parser.add_argument("-t", "--target", dest="targ",
+                    help="should be the PARENT dir "
+                         "containing the 'adw-gtk3' and 'adw-gtk3-dark' dirs")
 parser.add_argument("-d", "--debug", action='store_true',
                     help="Show Debug Output")
 
@@ -310,19 +313,24 @@ replace = {
 gtk_rc = "{}/adw-gtk3/gtk-2.0/gtkrc".format(args.res)
 gtk_dark_rc = "{}/adw-gtk3-dark/gtk-2.0/gtkrc".format(args.res)
 
-username = os.environ['USER']
-home_dir = os.environ.get('HOME', '/home/{}'.format(username))
+if args.targ:
+    target_dir = "{}".format(args.targ)
+else:
+    """
+    i will assume that the command to install adw-gtk2 was:
+    make install INSTALL_DIR=~/.local/share/themes
+    """
+    username = os.environ['USER']
+    home_dir = os.environ.get('HOME', '/home/{}'.format(username))
+    target_dir = "{}/.local/share/themes".format(home_dir)
 
-"""
-i will assume that the command to install adw-gtk2 was:
-make install INSTALL_DIR=~/.local/share/themes
-"""
-target_dir = "{}/.local/share/themes".format(home_dir)
+
 target_light = "{}/adw-gtk3/gtk-2.0/gtkrc".format(target_dir)
 target_dark = "{}/adw-gtk3-dark/gtk-2.0/gtkrc".format(target_dir)
 
 if os.path.exists(args.res):
-    # print("dir exists")
+    if args.debug:
+        print("dir exists")
     if os.path.isfile(gtk_rc) and os.path.isfile(gtk_dark_rc):
         if args.debug:
             print("rc files exist")
@@ -330,6 +338,8 @@ if os.path.exists(args.res):
         colorize_gtk2(gtk_rc, target_light, search_light)
         # colorize dark
         colorize_gtk2(gtk_dark_rc, target_dark, search_dark)
+        if args.debug:
+            print("rc files written")
     else:
         print("rc files don't exist")
         sys.exit()
