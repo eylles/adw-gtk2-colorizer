@@ -31,13 +31,13 @@ def data_rgb_to_hex(dictio, key, value):
     return type: void
     description:
       replace the "rgba()" values
-      with the correspinding rgb hex string
+      with the corresponding rgb hex string
     """
     if value.find("rgb") > -1:
         oparen = value.find("(")
         cparen = value.find(")")
         # index_str = value[1:]
-        vallist = value[oparen + 1 : cparen].split(",")
+        vallist = value[oparen + 1: cparen].split(",")
         r = int(vallist[0])
         g = int(vallist[1])
         b = int(vallist[2])
